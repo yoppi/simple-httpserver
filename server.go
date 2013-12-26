@@ -5,10 +5,11 @@ import (
 	"fmt"
 	"net/http"
 	"time"
+	"log"
 )
 
 func logDate(now time.Time) string {
-	return fmt.Sprintf("%02d/%3s/%04d %02d:%02d:%02d", now.Day(), now.Month(), now.Year(), now.Hour(), now.Minute(), now.Second())
+	return fmt.Sprintf("%02d/%3s/%04d:%02d:%02d:%02d", now.Day(), now.Month(), now.Year(), now.Hour(), now.Minute(), now.Second())
 }
 
 func accessLog(r *http.Request, code int, size interface{}) {
