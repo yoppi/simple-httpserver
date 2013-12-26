@@ -48,8 +48,5 @@ func main() {
 	http.HandleFunc("/", simpleHTTPHandler())
 	port := parseArgs()
 	fmt.Printf("Serving HTTP on localhost port %v\n", port)
-	err := http.ListenAndServe(":" + port, nil)
-	if err != nil {
-		panic(err)
-	}
+	log.Fatal(http.ListenAndServe(":" + port, nil))
 }
